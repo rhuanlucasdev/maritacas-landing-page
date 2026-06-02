@@ -534,12 +534,19 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-[rgba(79,38,22,0.12)] bg-[rgba(255,253,247,0.35)] px-5 py-9 sm:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm font-medium text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            MariTaca&apos;s Restaurante - Culinária mineira, aconchego e sabor
-            de interior.
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm font-medium text-[var(--muted)] lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <p>
+              MariTaca&apos;s Restaurante - Culinária mineira, aconchego e sabor
+              de interior.
+            </p>
+            <p className="mt-1">Gonçalves-MG · Landing page concept developed by Rhuan Lucas.</p>
+          </div>
+          <p className="max-w-xl text-balance lg:text-right">
+            Landing page conceitual desenvolvida para fins de apresentação
+            comercial. Este projeto não possui vínculo oficial com o
+            MariTaca&apos;s Restaurante.
           </p>
-          <p>Gonçalves-MG · Landing page concept developed by Rhuan Lucas.</p>
         </div>
       </footer>
     </main>
