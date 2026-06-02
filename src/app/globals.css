@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff8ec;
+  --background-deep: #efe0c7;
+  --surface: #f3e4cc;
+  --surface-light: #fffdf7;
+  --ink-soft: rgba(47, 36, 28, 0.7);
+  --text: #2f241c;
+  --muted: #7a6654;
+  --primary: #7a3f23;
+  --primary-dark: #4f2616;
+  --accent: #c9853b;
+  --accent-strong: #9a5a25;
+  --green: #52633a;
+  --focus: rgba(201, 133, 59, 0.38);
+  --foreground: var(--text);
 }
 
 @theme inline {
@@ -12,15 +24,97 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background:
+    linear-gradient(rgba(79, 38, 22, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 38, 22, 0.028) 1px, transparent 1px),
+    linear-gradient(180deg, var(--background), var(--background-deep));
+  background-size: 22px 22px, 22px 22px, auto;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--background);
+}
+
+.font-serif {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+.texture-lines {
+  background-image:
+    linear-gradient(90deg, rgba(79, 38, 22, 0.1) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(79, 38, 22, 0.08) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.ornament-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(122, 63, 35, 0.34),
+    transparent
+  );
+}
+
+.torn-edge {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 12px),
+    94% 100%,
+    88% calc(100% - 9px),
+    77% 100%,
+    68% calc(100% - 10px),
+    58% 100%,
+    47% calc(100% - 8px),
+    36% 100%,
+    27% calc(100% - 11px),
+    16% 100%,
+    7% calc(100% - 9px),
+    0 100%
+  );
+}
+
+.photo-weave {
+  background:
+    linear-gradient(135deg, rgba(255, 253, 247, 0.35), transparent 42%),
+    repeating-linear-gradient(
+      100deg,
+      rgba(79, 38, 22, 0.08) 0,
+      rgba(79, 38, 22, 0.08) 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    linear-gradient(145deg, #ead2ad, #b7773f 50%, #4f2616);
+}
+
+.menu-rule {
+  background-image: radial-gradient(
+    circle,
+    rgba(122, 63, 35, 0.4) 1px,
+    transparent 1.5px
+  );
+  background-size: 7px 1px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
